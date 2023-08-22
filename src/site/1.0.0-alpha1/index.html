@@ -1,0 +1,52 @@
+<%- include( "_head.html", { title: undefined, mainIndex: (typeof mainIndex !== "undefined" && mainIndex) } ) %>
+<%- include( "_header.html", { subtitle: "Let Everyone Know How AI Helped You…Or Didn't", 
+                               mainIndex: (typeof mainIndex !== "undefined" && mainIndex) }  ) %>
+  <main class="ph-3">
+    <p class="f-3">
+      Sometimes a Generative AI did all the work. Sometimes you did.  Sometimes it's a little bit in between.  This site gives you basic tools to communicate this.
+    </p>
+    <% if (typeof mainIndex !== "undefined" && mainIndex) { %>
+    <p class="f-3">
+      <span class="f-1 ttu">
+        Latest Version: <a href="<%= semver.raw %>/index.html"><%= semver.raw %></a>
+      </span>
+      <span class="f-1 xttu">
+        <a class="db" href="#versions">All Versions</a>
+      </span>
+    </p>
+    <% } %>
+    <ol class="lsp-inside ph-3 lst-none">
+      <li>
+        <p>
+          <a class="db f-3" href="/<%= semver.raw %>/assess.html">Assess How Much Assistance You Had.</a>
+          Did you write the entire blog post yourself? Did the AI generate that image on your site?  Did an AI only help with typos and repetitive tasks or did it contribute creatively? Let the people who consume your content know.
+      </li>
+      <li>
+        <p >
+          <a class="db f-3" href="/<%= semver.raw %>/declare.html">Make Your Declarations.</a>
+          Embed your declaration into your content, but it metadata on a web page, or special tags in an MP3.  Let others know how much help you had with Generative AI.
+        </p>
+      </li>
+    </ol>
+    <% if (typeof versions !== "undefined") { %>
+      <h3 class="measure mh-auto">Versions</h3>
+      <ol class="lst-none">
+      <% versions.forEach( (version) => { %>
+      <li><p><a href="<%= version.raw %>/index.html"><%= version.raw %></a></p></li>
+      <% }) %>
+      </ol>
+    <% } %>
+
+
+    <h3 class="measure mh-auto">Why?</h3>
+    <p>
+      The output of Generative AI is—and will continue to be—hard to detect.  Because it's so convincing, tools to understand the role Generative AI played in the creation of content are needed.
+    </p>
+    <p>
+      Authors, artists, and musicians may want a way to explicitly state that a work was entirely created by them. Or, they may wish to be transparent about how much help they got in the creation of their work.  There's a difference in having a Generative AI fix typos than having it write prose that you later edit.
+    </p>
+    <p>
+      If these differences are important to others, the AI Content Declaration is an easy way to clarify them in your own work.  It doesn't mean that Generative AI is bad or unethical, but it benefits everyone to know the exact role it plays in the media we consume.
+    </p>
+  </main>
+<%- include( "_foot.html") %>

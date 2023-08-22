@@ -1,0 +1,13 @@
+{
+  "name": "ai-content-declaration",
+  "version": "1.0.0-alpha1",
+  "description": "Source code for AI content declaration site",
+  "main": "index.js",
+  "author": "",
+  "license": "CC-BY-NC-ND-4.0",
+  "type": "module",
+  "devDependencies": {
+    "ejs": "^3.1.9",
+    "semver": "^7.5.4"
+  }
+}

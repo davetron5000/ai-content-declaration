@@ -1,0 +1,244 @@
+<%- include( "_head.html", { title: "Assessing the Level" } ) %>
+<%- include( "_header.html", { subtitle: "Assessing the Level" } ) %>
+<main>
+  <section class="pa-3">
+  <p>
+    The current version of the AI Content Declaration allows you to classify a work—or portion of that work—along one of four levels:
+  </p>
+  <ol>
+    <li><p class="mv-0">No involement</p></li>
+    <li><p class="mv-0">Non-creative assistance</p></li>
+    <li><p class="mv-0">Creative assistance</p></li>
+    <li><p class="mv-0">Completely produced by an AI</p></li>
+  </ol>
+  <p>
+    How you assess the level of assistance is up to you and how you want to communicate to the consumers of your content.  Below are two decision aides to help you decide, one in text and one as an image.
+  </p>
+  </section>
+  <section data-decision-tab-view role="tablist">
+    <nav class="flex items-baseline justify-between justify-center-ns">
+      <a role="tab" id="decision-text-tab" aria-controls="decision-text-panel" class="w-100 w-20-ns f-1 lh-title tc br-tr-3 br-tl-3-ns bg-green-lightest ph-3 pv-2 green-darkest tdn" href="#" >Decision Text</a>
+      <a id="decision-chart-tab" aria-controls="decision-chart-panel" role="tab" class="w-100 w-20-ns f-1 lh-title tc br-tl-3 br-tr-3-ns ml-1 bg-green-light ph-3 pv-2 green-dark" href="#" >Decision Chart</a>
+    </nav>
+    <div class="bg-green-lightest green-darkest">
+      <div class="db pa-3" role="tabpanel" id="decision-text-panel" aria-selected="true" aria-labeled-by="decision-text-tab">
+        <ol class="ma-0 pl-3">
+          <li class="mh-auto measure mb-2"><strong>Was Generative AI used in any way?</strong>
+            <ul class="ma-0 pl-3">
+              <li><p class="mv-0">If yes, proceed to question #2</p></li>
+              <li><p class="mv-0">If no, your assessment assessment <a class="green-dark" href="none.html">None</a></p></li>
+            </ul>
+          </li>
+          <li class="mh-auto measure mb-2"><strong>Did Generative AI produce the entire work?</strong>
+            <ul class="ma-0 pl-3">
+              <li><p class="mv-0">If yes, your assessment is <a class="green-dark" href="total.html">Total</a></p></li>
+              <li><p class="mv-0">If no, proceed to question #3</p></li>
+            </ul>
+          </li>
+          <li class="mh-auto measure mb-2"><strong>Did Generative AI contribute creatively?</strong>
+            <ul class="ma-0 pl-3">
+              <li><p class="mv-0">If yes, your assessment is <a class="green-dark" href="creative.html">Creative Assistance</a></p></li>
+              <li><p class="mv-0">If no, your assessment is <a class="green-dark" href="non-creative.html">Non-creative Assistance</a></p></li>
+              <li><p class="mv-0">If you aren't sure see <a class="green-dark" href="#creative-contribution">below</a></p></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="dn" id="decision-chart-panel" role="tabpanel" aria-selected="false" aria-labeled-by="decision-chart-tab" hidden>
+         <code class="db pa-3 mh-auto mw-100 flex items-center justify-center"><pre class="f-3">
+<span class="ff-sans f-2">Was Generative AI used at all?</span>
+&boxv;  &boxv;
+&boxv;  &boxur;&HorizontalLine;<span class="ff-mono f-2 fw-5 mh-2">No</span>&srarr;<a href="none.html" class="ff-sans f-2 fw-bold mh-2 green-dark">None</a>
+<span class="ff-mono f-2 fw-5 dib">Yes</span>
+&boxur;&HorizontalLine;&HorizontalLine;&boxdl;
+  <span class="ff-sans f-2">Was there any human contribution?</span>
+  &boxv;  &boxv;
+  &boxv;  &boxur;&HorizontalLine;<span class="ff-mono f-2 fw-5 mh-2">No</span>&srarr;<a href="total.html" class="ff-sans f-2 fw-bold mh-2 green-dark">Total</a>
+  <span class="ff-mono f-2 fw-5 dib">Yes</span>
+  &boxur;&HorizontalLine;&HorizontalLine;&boxdl;
+    <span class="ff-sans f-2">Did the Generative AI</span>
+    <span class="ff-sans f-2">contribute creatively?</span>
+    &boxv;  &boxv;
+    &boxv;  &boxur;&HorizontalLine;<span class="ff-mono f-2 fw-5 mh-2">No</span>&srarr;<a href="non-creative.html" class="ff-sans f-2 fw-bold mh-2 green-dark">Non-creative</a>
+    &boxv;
+    <span class="ff-mono f-2 fw-5 dib mr-2">Yes</span>&srarr;<a href="creative.html" class="ff-sans f-2 fw-bold mh-2 green-dark">Creative</a>
+        </pre></code>
+      </div>
+    </div>
+  </section>
+  <section class="pa-3"
+  <a name="creative-contribution"></a>
+  <aside>
+    <h3 class="lh-title measure mh-auto">What Constitutes a “creative contribution” by a Generative AI?</h3>
+    <p>
+      Since you are the ultimate creator of the work, it's your judgement about what is a “creative” contribution from a generative AI.  But, a good rule of thumb is if the generative AI automated something mechanical and repetitive, such as checking for typos, that is not a creative contribution. Otherwise, it may be.
+    </p>
+    <p>
+      Examples of non-creative contributions:
+    </p>
+    <ul>
+      <li><p class="f-1 mv-0">Fixing typos and grammatical errors in text.</p></li>
+      <li><p class="f-1 mv-0">Content-aware fill in an image-editing program.</p></li>
+      <li><p class="f-1 mv-0">Auto-completing a pattern in code, such as test data based on a human-entered formula.</p></li>
+    </ul>
+    <p class="mv-0">
+      Examples of creative contributions:
+    </p>
+    <ul>
+      <li><p class="f-1 mv-0">Auto-completing an entire sentence based on context.</p></li>
+      <li><p class="f-1 mv-0">Generating an image based on a description.</p></li>
+      <li><p class="f-1 mv-0">Producing a multi-line algorithm in a computer program.</p></li>
+    </ul>
+    <p>
+      Note that non-creative contributions by a <strong>non-AI</strong> system don't need to be declared.  For example, when sequencing music, many sequencers will randomize certain notes to provide variety.  This is not a Generative AI, so does not constitute a non-creative contribution.
+    </p>
+    <p>
+      Ultimately, the choice is yours.  You know best how the work was created, and what role the generative AI played specifically.
+    </p>
+  </aside>
+  <a name="transitive"></a>
+  <aside>
+    <h3 class="lh-title mh-auto measure">What About The Tools Used To Create the Work?</h3>
+    <p>
+      Most creative endeavors rely on tools to help create the work.  Generative AI is such a tool, but there are myriad others, and these tools may make their own declarations—or not.  Your declaration need not account for the tools that you used. For example, if Generative AI was used to create a CSS library you are using to style your website, that does not constitute a Generative AI contribution to your website.
+    </p>
+    <p>
+      <strong>Transitive dependencies don't count.</strong>
+    </p>
+  </aside>
+  </section>
+</main>
+  <script>
+    class Tab {
+      static unSelectedClasses = [
+        "bg-green-light",
+        "green-dark",
+        "tdu"
+      ]
+      static selectedClasses = [
+        "bg-green-lightest",
+        "green-darkest",
+        "tdn"
+      ]
+      constructor($tab) {
+        this.tab = $tab
+        this.listeners = []
+        this.tab.addEventListener("click", (event) => {
+          event.preventDefault()
+          this.listeners.forEach( (listener) => listener() )
+        })
+      }
+      select() {
+        this.tab.classList.remove(...Tab.unSelectedClasses)
+        this.tab.classList.add(...Tab.selectedClasses)
+      }
+      unselect() {
+        this.tab.classList.add(...Tab.unSelectedClasses)
+        this.tab.classList.remove(...Tab.selectedClasses)
+      }
+      onClick(listener) {
+        this.listeners.push(listener)
+      }
+    }
+    class Panel {
+      constructor($panel) {
+        this.panel = $panel
+      }
+      show() {
+        this.panel.removeAttribute("hidden")
+        this.panel.setAttribute("aria-selected", true)
+        this.panel.classList.remove("dn")
+        this.panel.classList.add("db")
+      }
+      hide() {
+        this.panel.setAttribute("hidden", true)
+        this.panel.setAttribute("aria-selected", false)
+        this.panel.classList.add("dn")
+        this.panel.classList.remove("db")
+      }
+    }
+    class TabPanel {
+      constructor(id, tab, panel) {
+        this.id    = id
+        this.tab   = tab
+        this.panel = panel
+      }
+      show() {
+        this.tab.select()
+        this.panel.show()
+      }
+      hide() {
+        this.tab.unselect()
+        this.panel.hide()
+      }
+    }
+
+    class TabControl {
+      constructor($tabControl) {
+        this.tabControl = $tabControl
+        this.tabPanels = {}
+        this.tabControl.querySelectorAll("[role=tab]").forEach( (tab) => {
+          const id = tab.getAttribute("aria-controls")
+          const panel = document.getElementById(tab.getAttribute("aria-controls"))
+          this.tabPanels[id] = new TabPanel(id, new Tab(tab), new Panel(panel))
+        })
+        Object.values(this.tabPanels).forEach( (tabPanel) => {
+          tabPanel.tab.onClick( () => this.show(tabPanel.id) )
+        })
+        this.listeners = []
+      }
+
+      onShow(listener) {
+        this.listeners.push(listener)
+      }
+
+      show(tabPanelId) {
+        const tabPanel = this.tabPanels[tabPanelId]
+        if (tabPanel) {
+          Object.values(this.tabPanels).forEach( (other) => other.hide() )
+          tabPanel.show()
+          this.listeners.forEach( (listener) => listener(tabPanel) )
+        }
+      }
+    }
+
+    class SelectedTabState {
+      constructor(window) {
+        this.searchParams = new URLSearchParams(window.location.search)
+        this.selectedTabId = this.searchParams.get("selectedPanel")
+        this.window = window
+        this.listeners = []
+        this.window.addEventListener("popstate", (event) => {
+          const tabId = (event.state || {}).selectedPanel
+          if (tabId) {
+            this.listeners.forEach( (listener) => listener(tabId) )
+          }
+        })
+      }
+
+      onNavigation(listener) {
+        this.listeners.push(listener)
+      }
+
+      setSelectedTabId(tabId) {
+        this.selectedTabId = tabId
+        this.searchParams.set("selectedPanel", tabId)
+        this.window.history.pushState(
+          { selectedPanel: tabId },
+          "unused",
+          "?" + this.searchParams.toString()
+        )
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+      const tabControl       = new TabControl(document.querySelector("[data-decision-tab-view]"))
+      const selectedTabState = new SelectedTabState(window)
+
+      tabControl.show(selectedTabState.selectedTabId)
+
+      tabControl.onShow( (tabPanel) => selectedTabState.setSelectedTabId(tabPanel.id) )
+      selectedTabState.onNavigation( (tabId) => tabControl.show(tabId) )
+    })
+  </script>
+<%- include( "_foot.html") %>

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Content Declaration- Making a Declaration 1.0.0-alpha1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta itemprop="ai-content-declaration:version" content="1.0.0-alpha1" />
+  <meta itemprop="ai-content-declaration:level" content="none" />
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" />
+  <link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
+  <style>
+:root {
+  --mg-ffsans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  --mg-greenlightest: #e6ffe6;
+  --mg-greenlight: #99ff99;
+  --mg-green: #009900;
+  --mg-greendark: #006600;
+  --mg-greendarkest: #003300;
+}
+
+.bg-black-ish {
+    background-color: #002300;
+}
+.black-ish {
+    color: #002300;
+}
+
+a {
+  color: var(--mg-greenlightest);
+}
+
+p {
+  line-height: 1.5;
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.glow {
+  text-shadow: rgba(230,255,230,0.61) 0px 0px 4px;
+}
+.glow-less {
+  text-shadow: rgba(230,255,230,0.51) 0px 0px 4px;
+}
+  </style>
+</head>
+<body class="ff-sans bg-black-ish green-light">
+
+
+<header class="pa-3 tc bg-green-darkest bb bc-green-light" style="background: linear-gradient(180deg, hsla(120, 100%, 7%, 1) 0%, hsla(120, 100%, 13%, 1) 100%);">
+  <h1 class="f-5 lh-title ttu"><a class="glow tdn hover-tdu-ns" href="index.html">AI Content Declaration</a> 1.0.0-alpha1</h1>
+  <h2 class="f-4 lh-title fw-5 glow-less">Making a Declaration</h2>
+</header>
+
+  <main>
+    <p class="pa-2">
+      Once you've made your assessment, you'll want to declare it so that others can find it.  How you do that depends on the type of content, but it is recommended that you at least make your declaration in writing, and optionally provide a structured declaration alongside it.
+    </p>
+    <section class="pa-2">
+    <h3 class="measure mh-auto">Written Declaration</h3>
+    <p>
+      The simplest way to make your declaration is in writing.  You can use the following language:
+    </p>
+    <h4 class="measure mh-auto">None</h4>
+    <dl class="measure mh-auto">
+      <dt class="ml-2 db">Text</dt>
+      <dd class="mv-2 ml-2">
+            <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 green-dark pa-2 lh-copy">
+              [This «type of work»|«title of work»] was created without any contribution from a generative AI.
+            </blockquote>
+      </dd>
+
+      <dt class="ml-2 db">Link</dt>
+      <dd class="mv-2 ml-2 ff-mono f-1 bg-green-lightest bc-green br-2 green-dark pa-2 ws-nowrap overflow-x-scroll">
+        http://blah.com/1.0.0-alpha1/none.html
+      </dd>
+    </dl>
+    <h4 class="measure mh-auto">Non-creative</h4>
+    <dl class="measure mh-auto">
+      <dt class="ml-2 db">Text</dt>
+      <dd class="mv-2 ml-2">
+      <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 green-dark pa-2 lh-copy">
+        [This «type of work»|«title of work»] was created with non-creative assistance from a generative AI.
+      </blockquote>
+      </dd>
+
+      <dt class="ml-2 db">Link</dt>
+      <dd class="mv-2 ml-2 ff-mono f-1 bg-green-lightest bc-green br-2 green-dark pa-2 ws-nowrap overflow-x-scroll">
+        http://blah.com/1.0.0-alpha1/non-creative.html
+      </dd>
+    </dl>
+    <h4 class="measure mh-auto">Creative</h4>
+    <dl class="measure mh-auto">
+      <dt class="ml-2 db">Text</dt>
+      <dd class="mv-2 ml-2">
+      <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 green-dark pa-2 lh-copy">
+        [This «type of work»|«title of work»] includes creative contributions from a generative AI.
+      </blockquote>
+      </dd>
+
+      <dt class="ml-2 db">Link</dt>
+      <dd class="mv-2 ml-2 ff-mono f-1 bg-green-lightest bc-green br-2 green-dark pa-2 ws-nowrap overflow-x-scroll">
+        http://blah.com/1.0.0-alpha1/creative.html
+      </dd>
+    </dl>
+    <h4 class="measure mh-auto">Total</h4>
+    <dl class="measure mh-auto">
+      <dt class="ml-2 db">Text</dt>
+      <dd class="mv-2 ml-2">
+      <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 green-dark pa-2 lh-copy">
+        [This «type of work»|«title of work»] was created by a generative AI.
+      </blockquote>
+      </dd>
+
+      <dt class="ml-2 db">Link</dt>
+      <dd class="mv-2 ml-2 ff-mono f-1 bg-green-lightest bc-green br-2 green-dark pa-2 ws-nowrap overflow-x-scroll">
+        http://blah.com/1.0.0-alpha1/total.html
+      </dd>
+    </dl>
+
+    </section>
+    <section class="bg-green-darkest">
+      <div class="pa-3">
+      <h3 class="mt-0 measure mh-auto">Structured Declarations</h3>
+      <p>
+        Making your Declaration in a structured way can be additionally helpful.  This can allow other technologies to understand your declaration, which can lead to additional capabilities.  For example, a researcher may want to highlight areas of a work where a generative AI contributed creatively so they can quickly understand what they are reading.
+      </p>
+      <p>
+        Because of the myriad formats for media that exist, not all can include a structured declaration.  This guide will include those that do.
+      </p>
+      </div>
+      <nav class="flex items-baseline justify-between mh-auto measure bg-green-dark green-lightest pv-3 ph-4">
+        <a href="#html">HTML</a>
+        <a href="#exif">EXIF</a>
+        <a href="#id3">ID3</a>
+      </nav>
+      <a name="html"></a>
+      <section class="pa-3">
+      <h4 class="measure mh-auto">HTML</h4>
+      <p>
+        HTML is the most ubiquitous media type, and it's likely that your work is HTML, or is being presented as HTML.  In addition to a human readable written statement, your HTML can make use of special tags and attributes to indicate which parts of a page have which levels of Generative AI content.
+      </p>
+      <p>
+        To make declarations in HTML, you can use a combination of <code>meta</code> tags and <code>itemprop</code> attributes.
+      </p>
+      <h5 class="measure mh-auto">Declare the Entire Page</h5>
+      <p>
+        To make a declaration for the entire page, which can by overridden on an element-by-element basis, use <code>meta</code> tags in the <code>head</code> section. You'll need to specify both the version of this site and the level you are declaring.
+      </p>
+      <code class="db mh-auto measure overflow-x-scroll bg-black green-light br-3 pa-2"><pre>&lt;head&gt;
+
+  &lt;!- ... --&gt;
+
+  <span class="green-lightest glow">&lt;meta itemprop="ai-content-declaration:version"
+         content="1.0.0"&gt;
+  &lt;meta itemprop="ai-content-declaration:level"
+         content="non-creative"&gt;</span>
+
+  &lt;!- ... --&gt;
+
+&lt;/head&gt;</pre></code>
+      <p>
+        The possible values for <code>ai-content-declaration:level</code> are:
+      </p>
+      <ul class="pl-4">
+        <li><p class="mv-1"><code>none</code> - for an assessment of <a class="green-lightest" href="none.html">no AI assistance</a>.</p></li>
+        <li><p class="mv-1"><code>non-creative</code> - for an assessment that <a class="green-lightest" href="non-creative.html">an AI contributed non-creatively</a>.</p></li>
+        <li><p class="mv-1"><code>creative</code> - for an assessment that <a class="green-lightest" href="creative.html">an AI made creative contributions</a>.</p></li>
+        <li><p class="mv-1"><code>total</code> - for an assessment that <a class="green-lightest" href="total.html">the work is entirely AI-generated</a>.</p></li>
+      </ul>
+      <h5 class="measure mh-auto">Declare Portions of the Page</h5>
+      <p>
+        Since an HTML page can contain links to, or embeddings of, many different pieces of media, you may need to make separate declarations for different parts of the page.  This can be done using the <code>data</code> element and <code>itemprop</code> tags.
+      </p>
+      <p>
+        The AI Content Declaration is not part of any schema.org-defined type, so you should use <code>itemref</code> to reference a <code>data</code> element that contains the information needed for the declaration.  For example, suppose you have declared a blog post as level <code>none</code>, but your post contains an image generated from DALL-E.  Here is how you would mark up the image:
+      </p>
+      <code class="db mh-auto measure overflow-x-scroll bg-black green-light br-3 pa-2"><pre>&lt;img src="my-image.png"
+     <span class="glow green-lightest">itemref="my-image-acd-level my-image-acd-version"</span>&gt;
+<span class="glow green-lightest">&lt;data id="my-image-acd-level"
+      itemprop="ai-content-declaration:version"
+      value="1.0.0" /&gt;
+&lt;data id="my-image-acd-level"
+      itemprop="ai-content-declaration:level"
+      value="total" /&gt;</span></pre></code>
+      <p>
+        The reason for this indirection is to allow element of your page to declare themselves as having item types and conforming to a schema.
+      </p>
+      </section>
+      <section class="pa-3">
+      <a name="exif"></a>
+      <h4 class="mt-0 measure mh-auto">EXIF</h4>
+      <p>
+        Most image formats support EXIF data.  If you wish to make a declaration on an image, use two <code>UserComment</code> EXIF tags: one that says <code>generative-ai-declaration:level=«level»</code> (using one of the levels above), and <code>generative-ai-declaration:version=«version»</code>.
+      </p>
+      </section>
+      <a name="id3"></a>
+      <section class="pa-3">
+      <h4 class="mt-0 measure mh-auto">ID3</h4>
+      <p>
+        MP3 support ID3 tags, and the <code>PRIV</code> tag can be used to encode.  Place two <code>PRIV</code> tags:
+        one that says <code>generative-ai-declaration:level=«level»</code> (using one of the levels above), and <code>generative-ai-declaration:version=«version»</code>.
+      </p>
+    </section>
+  </main>
+  <footer class="ph-3 pv-4 bg-green-lightest green-dark tc" style="background: linear-gradient(180deg, hsla(120, 100%, 95%, 1) 0%, hsla(120, 100%, 80%, 1) 100%);">
+    <p>
+      This entire website was created without <a class="green-darkest" href="/1.0.0-alpha1/none.html">any contribution from a generative AI</a>.
+    </p>
+    <p class="f-1">
+      All content copyright &copy;2023 by David Bryant Copeland, licensed under the Creative Commons <a class="green-darkest" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">Attribution-NonCommercial-NoDerivatives 4.0 International</a> license.
+    </p>
+  </footer>
+  </body>
+</html>
+

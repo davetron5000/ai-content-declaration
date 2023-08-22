@@ -1,0 +1,1 @@
+node src/js/server.js  --dir docs --port 9998

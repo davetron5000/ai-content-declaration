@@ -1,0 +1,49 @@
+<%
+const main = typeof mainIndex !== "undefined" && mainIndex
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Content Declaration<%= title ? `- ${title}` : "" %> <%= main ? "" : semver.raw %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta itemprop="ai-content-declaration:version" content="<%= semver.raw %>" />
+  <meta itemprop="ai-content-declaration:level" content="none" />
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" />
+  <link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
+  <style>
+:root {
+  --mg-ffsans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  --mg-greenlightest: #e6ffe6;
+  --mg-greenlight: #99ff99;
+  --mg-green: #009900;
+  --mg-greendark: #006600;
+  --mg-greendarkest: #003300;
+}
+
+.bg-black-ish {
+    background-color: #002300;
+}
+.black-ish {
+    color: #002300;
+}
+
+a {
+  color: var(--mg-greenlightest);
+}
+
+p {
+  line-height: 1.5;
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.glow {
+  text-shadow: rgba(230,255,230,0.61) 0px 0px 4px;
+}
+.glow-less {
+  text-shadow: rgba(230,255,230,0.51) 0px 0px 4px;
+}
+  </style>
+</head>
+<body class="ff-sans bg-black-ish green-light">
