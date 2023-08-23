@@ -14,6 +14,9 @@ const {
   positionals
 } = parseArgs({
   options: {
+    "no-minify": {
+      type: "boolean",
+    },
     help : {
       type: "boolean",
       short: "h",
@@ -79,7 +82,8 @@ Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
         if (!fs.existsSync(fullPath + "/" + file + "/index.js")) {
           throw `index.js doesn't exist`
         }
-        const command = `npx esbuild --define:VERSION='\"${semver.raw}\"' --sourcemap --bundle ${fullPath}/${file}/index.js --outfile=${sitePath}/main.js`
+        const minifyFlag = values["no-minify"] ? "" : "--minify"
+        const command = `npx esbuild ${minifyFlag} --define:VERSION='\"${semver.raw}\"' --sourcemap --bundle ${fullPath}/${file}/index.js --outfile=${sitePath}/main.js`
         console.log(`Running '${command}'`)
         const stdout = child_process.execSync(command)
         console.log(stdout)
@@ -88,7 +92,8 @@ Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
         if (!fs.existsSync(fullPath + "/" + file + "/index.css")) {
           throw `index.js doesn't exist`
         }
-        const command = `npx esbuild --sourcemap --bundle ${fullPath}/${file}/index.css --outfile=${sitePath}/main.css`
+        const minifyFlag = values["no-minify"] ? "" : "--minify"
+        const command = `npx esbuild ${minifyFlag} --sourcemap --bundle ${fullPath}/${file}/index.css --outfile=${sitePath}/main.css`
         console.log(`Running '${command}'`)
         const stdout = child_process.execSync(command)
         console.log(stdout)
