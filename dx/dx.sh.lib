@@ -1,0 +1,67 @@
+# shellcheck shell=bash
+
+. "${SCRIPT_DIR}/setupkit.sh.lib"
+
+require_command "realpath"
+require_command "cat"
+
+ENV_FILE=$(realpath "${SCRIPT_DIR}")/docker-compose.env
+BASE_ENV_FILE=$(realpath "${SCRIPT_DIR}")/docker-compose.base.env
+LOCAL_ENV_FILE=$(realpath "${SCRIPT_DIR}")/docker-compose.local.env
+
+DOT_DOT=$(realpath "${SCRIPT_DIR}/..")/
+ENV_FILE_RELATIVE=${ENV_FILE//"${DOT_DOT}"/}
+BASE_ENV_FILE_RELATIVE=${BASE_ENV_FILE//"${DOT_DOT}"/}
+LOCAL_ENV_FILE_RELATIVE=${LOCAL_ENV_FILE//"${DOT_DOT}"/}
+
+ensure_docker_compose_env() {
+  if [ ! -e "${LOCAL_ENV_FILE}" ]; then
+    fatal "Looks like you have not set up yet. Please run dx/setup"
+  fi
+  regenerate=0
+  if [ -e "${ENV_FILE}" ]; then
+    if [ ${LOCAL_ENV_FILE} -nt ${ENV_FILE} ]; then
+      log "📆" "${LOCAL_ENV_FILE_RELATIVE} has changed since you generated ${ENV_FILE_RELATIVE}"
+      regenerate=1
+    else
+      if [ ${BASE_ENV_FILE} -nt ${ENV_FILE} ]; then
+        regenerate=1
+        log "📆" "${BASE_ENV_FILE_RELATIVE} has changed since you generated ${LOCAL_ENV_FILE_RELATIVE}"
+      fi
+    fi
+  else
+    log "📆" "${ENV_FILE_RELATIVE} doesnt' exist"
+    regenerate=1
+  fi
+
+  if [ $regenerate != 0 ]; then
+    log "🗄" "Creating ${ENV_FILE_RELATIVE} from ${LOCAL_ENV_FILE_RELATIVE} and ${BASE_ENV_FILE_RELATIVE}"
+    echo "# This is generated - do not edit" > "${ENV_FILE}"
+    {
+      echo "#"
+      echo "# To make changes for the project, edit ${BASE_ENV_FILE_RELATIVE}"
+      echo "# To make changes for your computer, edit ${LOCAL_ENV_FILE_RELATIVE}"
+      echo "# Delete this file after changing either of those"
+      echo "#"
+      echo ""
+      cat "${BASE_ENV_FILE}"
+      grep -v ^# "${LOCAL_ENV_FILE}"
+    } >> "${ENV_FILE}"
+  else
+    log "✅" "${ENV_FILE_RELATIVE} is up to date"
+  fi
+  # shellcheck disable=SC1090
+  . "${ENV_FILE}"
+}
+
+exec_hook_if_exists() {
+  script_name=$1
+  shift
+  if [ -x "${SCRIPT_DIR}"/"${script_name}" ]; then
+    log "🪝" "${script_name} exists - executing"
+    "${SCRIPT_DIR}"/"${script_name}" "${@}"
+  else
+    debug "${script_name} does not exist"
+  fi
+}
+# vim: ft=bash
