@@ -8,41 +8,8 @@
   <meta itemprop="ai-content-declaration:version" content="1.0.0-alpha1" />
   <meta itemprop="ai-content-declaration:level" content="none" />
   <link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" />
-  <link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
-  <style>
-:root {
-  --mg-ffsans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-  --mg-greenlightest: #e6ffe6;
-  --mg-greenlight: #99ff99;
-  --mg-green: #009900;
-  --mg-greendark: #006600;
-  --mg-greendarkest: #003300;
-}
-
-.bg-black-ish {
-    background-color: #002300;
-}
-.black-ish {
-    color: #002300;
-}
-
-a {
-  color: var(--mg-greenlightest);
-}
-
-p {
-  line-height: 1.5;
-  max-width: 30em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.glow {
-  text-shadow: rgba(230,255,230,0.61) 0px 0px 4px;
-}
-.glow-less {
-  text-shadow: rgba(230,255,230,0.51) 0px 0px 4px;
-}
-  </style>
+  <link rel="stylesheet" href="/1.0.0-alpha1/main.css">
+  <script src="/1.0.0-alpha1/main.js"></script>
 </head>
 <body class="ff-sans bg-black-ish green-light">
 
@@ -69,8 +36,21 @@ p {
   </section>
   <section data-decision-tab-view role="tablist">
     <nav class="flex items-baseline justify-between justify-center-ns">
-      <a role="tab" id="decision-text-tab" aria-controls="decision-text-panel" class="w-100 w-20-ns f-1 lh-title tc br-tr-3 br-tl-3-ns bg-green-lightest ph-3 pv-2 green-darkest tdn" href="#" >Decision Text</a>
-      <a id="decision-chart-tab" aria-controls="decision-chart-panel" role="tab" class="w-100 w-20-ns f-1 lh-title tc br-tl-3 br-tr-3-ns ml-1 bg-green-light ph-3 pv-2 green-dark" href="#" >Decision Chart</a>
+      <a id="decision-text-tab"
+        role="tab"
+        aria-controls="decision-text-panel"
+        data-selected-classes="bg-green-lightest green-darkest tdn"
+        data-unselected-classes="bg-green-light green-dark tdu"
+        class="w-100 w-20-ns f-1 lh-title tc br-tr-3 br-tl-3-ns bg-green-lightest ph-3 pv-2 green-darkest tdn"
+        href="#">
+        Decision Text
+      </a>
+      <a id="decision-chart-tab"
+        role="tab"
+        aria-controls="decision-chart-panel"
+        data-selected-classes="bg-green-lightest green-darkest tdn"
+        data-unselected-classes="bg-green-light green-dark tdu"
+        class="w-100 w-20-ns f-1 lh-title tc br-tl-3 br-tr-3-ns ml-1 bg-green-light ph-3 pv-2 green-dark" href="#" >Decision Chart</a>
     </nav>
     <div class="bg-green-lightest green-darkest">
       <div class="db pa-3" role="tabpanel" id="decision-text-panel" aria-selected="true" aria-labeled-by="decision-text-tab">
@@ -160,139 +140,6 @@ p {
   </aside>
   </section>
 </main>
-  <script>
-    class Tab {
-      static unSelectedClasses = [
-        "bg-green-light",
-        "green-dark",
-        "tdu"
-      ]
-      static selectedClasses = [
-        "bg-green-lightest",
-        "green-darkest",
-        "tdn"
-      ]
-      constructor($tab) {
-        this.tab = $tab
-        this.listeners = []
-        this.tab.addEventListener("click", (event) => {
-          event.preventDefault()
-          this.listeners.forEach( (listener) => listener() )
-        })
-      }
-      select() {
-        this.tab.classList.remove(...Tab.unSelectedClasses)
-        this.tab.classList.add(...Tab.selectedClasses)
-      }
-      unselect() {
-        this.tab.classList.add(...Tab.unSelectedClasses)
-        this.tab.classList.remove(...Tab.selectedClasses)
-      }
-      onClick(listener) {
-        this.listeners.push(listener)
-      }
-    }
-    class Panel {
-      constructor($panel) {
-        this.panel = $panel
-      }
-      show() {
-        this.panel.removeAttribute("hidden")
-        this.panel.setAttribute("aria-selected", true)
-        this.panel.classList.remove("dn")
-        this.panel.classList.add("db")
-      }
-      hide() {
-        this.panel.setAttribute("hidden", true)
-        this.panel.setAttribute("aria-selected", false)
-        this.panel.classList.add("dn")
-        this.panel.classList.remove("db")
-      }
-    }
-    class TabPanel {
-      constructor(id, tab, panel) {
-        this.id    = id
-        this.tab   = tab
-        this.panel = panel
-      }
-      show() {
-        this.tab.select()
-        this.panel.show()
-      }
-      hide() {
-        this.tab.unselect()
-        this.panel.hide()
-      }
-    }
-
-    class TabControl {
-      constructor($tabControl) {
-        this.tabControl = $tabControl
-        this.tabPanels = {}
-        this.tabControl.querySelectorAll("[role=tab]").forEach( (tab) => {
-          const id = tab.getAttribute("aria-controls")
-          const panel = document.getElementById(tab.getAttribute("aria-controls"))
-          this.tabPanels[id] = new TabPanel(id, new Tab(tab), new Panel(panel))
-        })
-        Object.values(this.tabPanels).forEach( (tabPanel) => {
-          tabPanel.tab.onClick( () => this.show(tabPanel.id) )
-        })
-        this.listeners = []
-      }
-
-      onShow(listener) {
-        this.listeners.push(listener)
-      }
-
-      show(tabPanelId) {
-        const tabPanel = this.tabPanels[tabPanelId]
-        if (tabPanel) {
-          Object.values(this.tabPanels).forEach( (other) => other.hide() )
-          tabPanel.show()
-          this.listeners.forEach( (listener) => listener(tabPanel) )
-        }
-      }
-    }
-
-    class SelectedTabState {
-      constructor(window) {
-        this.searchParams = new URLSearchParams(window.location.search)
-        this.selectedTabId = this.searchParams.get("selectedPanel")
-        this.window = window
-        this.listeners = []
-        this.window.addEventListener("popstate", (event) => {
-          const tabId = (event.state || {}).selectedPanel
-          if (tabId) {
-            this.listeners.forEach( (listener) => listener(tabId) )
-          }
-        })
-      }
-
-      onNavigation(listener) {
-        this.listeners.push(listener)
-      }
-
-      setSelectedTabId(tabId) {
-        this.selectedTabId = tabId
-        this.searchParams.set("selectedPanel", tabId)
-        this.window.history.pushState(
-          { selectedPanel: tabId },
-          "unused",
-          "?" + this.searchParams.toString()
-        )
-      }
-    }
-
-    window.addEventListener("DOMContentLoaded", (event) => {
-      const tabControl       = new TabControl(document.querySelector("[data-decision-tab-view]"))
-      const selectedTabState = new SelectedTabState(window)
-
-      tabControl.show(selectedTabState.selectedTabId)
-
-      tabControl.onShow( (tabPanel) => selectedTabState.setSelectedTabId(tabPanel.id) )
-      selectedTabState.onNavigation( (tabId) => tabControl.show(tabId) )
-    })
-  </script>
   <footer class="ph-3 pv-4 bg-green-lightest green-dark tc" style="background: linear-gradient(180deg, hsla(120, 100%, 95%, 1) 0%, hsla(120, 100%, 80%, 1) 100%);">
     <p>
       This entire website was created without <a class="green-darkest" href="/1.0.0-alpha1/none.html">any contribution from a generative AI</a>.

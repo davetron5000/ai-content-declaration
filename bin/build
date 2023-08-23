@@ -1,2 +1,4 @@
 #!/bin/sh
+set -e
 node src/js/build.js
+echo "declare-ai.org" > docs/CNAME

@@ -1,5 +1,6 @@
 import fs                from "node:fs"
 import path              from "node:path"
+import child_process     from "node:child_process"
 import { fileURLToPath } from "url"
 import ejs               from "ejs"
 import { parseArgs }     from "node:util"
@@ -73,7 +74,31 @@ Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
   versions.push(semver)
   fs.mkdirSync(sitePath)
   fs.readdirSync(fullPath).forEach((file) => {
-    if (!file.startsWith("_")) {
+    if (fs.statSync(fullPath + "/" + file).isDirectory()) {
+      if (file == "js") {
+        if (!fs.existsSync(fullPath + "/" + file + "/index.js")) {
+          throw `index.js doesn't exist`
+        }
+        const command = `npx esbuild --define:VERSION='\"${semver.raw}\"' --sourcemap --bundle ${fullPath}/${file}/index.js --outfile=${sitePath}/main.js`
+        console.log(`Running '${command}'`)
+        const stdout = child_process.execSync(command)
+        console.log(stdout)
+      }
+      else if (file == "css") {
+        if (!fs.existsSync(fullPath + "/" + file + "/index.css")) {
+          throw `index.js doesn't exist`
+        }
+        const command = `npx esbuild --sourcemap --bundle ${fullPath}/${file}/index.css --outfile=${sitePath}/main.css`
+        console.log(`Running '${command}'`)
+        const stdout = child_process.execSync(command)
+        console.log(stdout)
+      }
+      else {
+        console.log(`Ignoring ${file} as it's a directory and not one we can process`)
+        return
+      }
+    }
+    else if (!file.startsWith("_")) {
       const source = `${fullPath}/${file}`
       const siteFile = `${sitePath}/${file}`
       if (path.extname(file) == ".html") {

@@ -1,0 +1,34 @@
+@import "melange-css/melange.css";
+
+:root {
+  --mg-ffsans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --mg-greenlightest: #e6ffe6;
+  --mg-greenlight: #99ff99;
+  --mg-green: #009900;
+  --mg-greendark: #006600;
+  --mg-greendarkest: #003300;
+}
+
+.bg-black-ish {
+    background-color: #002300;
+}
+.black-ish {
+    color: #002300;
+}
+
+a {
+  color: var(--mg-greenlightest);
+}
+
+p {
+  line-height: 1.5;
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.glow {
+  text-shadow: rgba(230,255,230,0.61) 0px 0px 4px;
+}
+.glow-less {
+  text-shadow: rgba(230,255,230,0.51) 0px 0px 4px;
+}
