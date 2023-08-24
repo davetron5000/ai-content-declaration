@@ -2,5 +2,18 @@
 
 This repo contains the source:
 
-* `bin/build` - builds the website
-* `bin/serve` - serves it up locally
+1. Install Docker
+2. In a terminal:
+
+   ```
+   dx/start
+   ```
+
+3. When that completes, in another Terminal:
+
+   ```
+   dx/exec bin/setup
+   dx/exec bin/build
+   dx/exec bin/serve
+   ```
+4. View the site locally at `localhost:9998`
