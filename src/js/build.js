@@ -20,22 +20,46 @@ const {
     help : {
       type: "boolean",
       short: "h",
-    }
+    },
+    source: {
+      type: "string",
+    },
+    out: {
+      type: "string",
+    },
   },
   strict: true,
 })
-if (values.help) {
-  console.log("Usage: build.js [options]")
+
+const usage = () => {
+  console.log("Usage: build.js --source «dir» --out «dir» [options]")
   console.log()
   console.log("OPTIONS")
   console.log()
-  console.log("  --help                         - show this message")
+  console.log("  --help         - show this message")
+  console.log("  --source «dir» - where the site's source files are (required)")
+  console.log("  --out «dir»    - where to generate the site (required)")
   console.log()
+}
+if (values.help) {
+  usage()
   process.exit(0)
 }
 
-const htmlDir = `${__dirname}/../site`
-const siteDir = `${__dirname}/../../docs`
+if (!values.source) {
+  console.error("--source is required")
+  usage()
+  process.exit(1)
+}
+
+if (!values.out) {
+  console.error("--out is required")
+  usage()
+  process.exit(1)
+}
+
+const htmlDir = values.source
+const siteDir = values.out
 
 const nonDirs = []
 const dirNames = []

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+usage() {
+  echo "usage: $0 [-h]"
+  echo ""
+  echo "  Runs a webserver to view the site"
+}
+
+ENV=dev
+while getopts ":h" opt "${@}"; do
+  case ${opt} in
+    h)
+      usage
+      exit 0
+      ;;
+    \?)
+      echo "Unknown flag: ${OPTARG}"
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+npx http-server docs -p 9998 -c-1

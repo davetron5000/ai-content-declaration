@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+#
+set -e
+
+SHELL=/usr/bin/bash npx chokidar -p "src/site/**/*.css" "src/site/**/*.js" "src/site/**/*.js" "src/site/**/*.html" "src/js/**/*.js" -c "bin/build"

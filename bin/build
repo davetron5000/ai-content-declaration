@@ -1,4 +1,8 @@
 #!/bin/sh
 set -e
-node src/js/build.js
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" > /dev/null 2>&1 && pwd )
+ROOT_DIR=$( cd -- "${SCRIPT_DIR}"/.. > /dev/null 2>&1 && pwd )
+
+node src/js/build.js --source "${ROOT_DIR}"/src/site --out "${ROOT_DIR}"/docs
 echo "declare-ai.org" > docs/CNAME
