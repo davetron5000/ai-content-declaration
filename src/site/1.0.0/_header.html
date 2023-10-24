@@ -3,7 +3,7 @@ const main = typeof mainIndex !== "undefined" && mainIndex
 const sizeInvert = typeof size_invert !== "undefined" && size_invert
 %>
 <header class="pa-3 tc bg-green-darkest bb bc-green-light" style="background: linear-gradient(180deg, hsla(120, 100%, 7%, 1) 0%, hsla(120, 100%, 13%, 1) 100%);">
-  <h1 class="<%= sizeInvert ? 'f-4' : 'f-5' %> lh-title ttu"><a class="glow tdn hover-tdu-ns" href="index.html">AI Content Declaration</a> <span class="glow-less"><%= main ? "" : semver.raw %></span></h1>
+  <h1 class="<%= sizeInvert ? 'f-4' : 'f-5' %> lh-title ttu"><a class="glow tdn hover-tdu-ns" href="index.html">AI Content Declaration</a> <span class="glow-less ttl"><%= main ? "" : "v" + semver.raw %></span></h1>
   <h2 class="<%= sizeInvert ? 'f-5' : 'f-4' %> lh-title fw-5 glow-less"><%= subtitle %></h2>
   <% if (main) { %>
   <h3 class="f-2 lh-title fw-3">Latest Version <strong class="fw-5"><%= semver %></strong></h3>
