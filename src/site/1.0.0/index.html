@@ -1,28 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Content Declaration </title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta itemprop="ai-content-declaration:version" content="1.0.0" />
-  <meta itemprop="ai-content-declaration:level" content="none" />
-  <link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" />
-  <link rel="stylesheet" href="/1.0.0/main.css">
-  <script src="/1.0.0/main.js"></script>
-  <script defer data-domain="declare-ai.org" src="https://plausible.io/js/script.js"></script>
-</head>
-<body class="ff-sans bg-gray-darkest green-lighter">
-
-
-<header class="pa-3 tc bg-green-darkest bb bc-green-light" style="background: linear-gradient(180deg, hsla(120, 100%, 7%, 1) 0%, hsla(120, 100%, 13%, 1) 100%);">
-  <h1 class="f-5 lh-title ttu"><a class="glow tdn hover-tdu-ns" href="index.html">AI Content Declaration</a> <span class="glow-less"></span></h1>
-  <h2 class="f-4 lh-title fw-5 glow-less">Let Everyone Know How AI Helped You…Or Didn&#39;t</h2>
-  
-  <h3 class="f-2 lh-title fw-3">Latest Version <strong class="fw-5">1.0.0</strong></h3>
-  
-</header>
-
+<%- include( "_head.html", { title: undefined, mainIndex: (typeof mainIndex !== "undefined" && mainIndex) } ) %>
+<%- include( "_header.html", { subtitle: "Let Everyone Know How AI Helped You…Or Didn't", 
+                               mainIndex: (typeof mainIndex !== "undefined" && mainIndex) }  ) %>
   <main>
     <section class="ph-3">
       <p class="f-3">
@@ -74,7 +52,7 @@
         <div class="mt-3 mt-0-ns bg-green-lighter gray-dark f-5 w-4 h-4 br-100-ns br-3 ba tr flex items-center justify-center">1</div>
         <div>
           <p class="ml-3 mr-0">
-            <a class="db f-3" href="/1.0.0/assess.html">Assess How Much Assistance You Had.</a>
+            <a class="db f-3" href="/<%= semver.raw %>/assess.html">Assess How Much Assistance You Had.</a>
             Did you write the entire blog post yourself? Did the AI generate that image on your site?  Did an AI only help, but only with typos or repetitive tasks? Or did the AI contribute more creatively?
           </p>
         </div>
@@ -82,36 +60,24 @@
       <li class="flex items-center-ns items-start justify-center">
         <div class="mt-3 mt-0-ns bg-green-lighter gray-dark f-5 w-4 h-4 br-100-ns br-3 ba tr flex items-center justify-center">2</div>
         <p  class="ml-3 mr-0">
-          <a class="db f-3" href="/1.0.0/declare.html">Make Your Declarations.</a>
+          <a class="db f-3" href="/<%= semver.raw %>/declare.html">Make Your Declarations.</a>
           Embed your declaration into your content, put metadata on a web page, or add special tags in an MP3.  Let others know how much help you had with Generative AI.
         </p>
       </li>
     </ol>
     </section>
-    
+    <% if (typeof versions !== "undefined") { %>
     <section class="bg-black green-lighter pv-5">
       <a name="versions"></a>
       <h3 class="tc">Versions of This Protocol</h3>
       <ol class="lst-none pa-0">
-        
-          <li class="tc lh-copy"><a href="1.0.0/index.html">1.0.0</a></li>
-        
-          <li class="tc lh-copy"><a href="1.0.0-alpha1/index.html">1.0.0-alpha1</a></li>
-        
+        <% versions.forEach( (version) => { %>
+          <li class="tc lh-copy"><a href="<%= version.raw %>/index.html"><%= version.raw %></a></li>
+        <% }) %>
       </ol>
     </section>
-    
+    <% } %>
   </main>
 
 
-  <footer class="ph-3 pv-4 bg-green-lightest green-dark tc" style="background: linear-gradient(180deg, hsla(120, 100%, 95%, 1) 0%, hsla(120, 100%, 80%, 1) 100%);">
-    <p>
-      This entire website was created without <a class="dib green-darkest" href="/1.0.0/none.html">any contribution from a generative AI</a>.
-    </p>
-    <p class="f-1">
-      All content copyright &copy;2023 by David Bryant Copeland, licensed under the Creative Commons <a class="green-darkest" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">Attribution-NonCommercial-NoDerivatives 4.0 International</a> license.
-    </p>
-  </footer>
-  </body>
-</html>
-
+<%- include( "_foot.html") %>

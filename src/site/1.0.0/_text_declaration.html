@@ -1,0 +1,29 @@
+<a name="<%= anchor %>"</a>
+<section class="mt-4 mb-5 ph-3">
+<p role="heading" aria-level="4" class="measure mh-auto"><span class="f-3 b"><%= title %></span></p>
+<dl class="measure mh-auto">
+  <dt class="mh-0 mt-3 db">Sample Text</dt>
+  <dd class="mv-2 mh-0">
+  <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 black-ish pa-2 lh-copy">
+    <%= sample_text %>
+  </blockquote>
+  </dd>
+
+  <dt class="mh-0 mt-3 db">
+    Link
+    <a href="<%= link %>" title="Link to the page whose URL is below">#</a>
+  </dt>
+  <dd class="mv-2 mh-0 ff-mono f-1 bg-green-lightest bc-green br-2 black-ish pa-2 ws-nowrap overflow-x-scroll">
+  <%= link %>
+  </dd>
+
+  <dt class="mh-0 mt-3 db">Examples</dt>
+  <% examples.forEach( (example) => { %>
+  <dd class="mv-2 mh-0">
+  <blockquote class="f-1 ma-0 i bg-green-lightest bc-green br-2 black-ish pa-2 lh-copy">
+    <%- example %>
+  </blockquote>
+  </dd>
+  <% }) %>
+</dl>
+</section>

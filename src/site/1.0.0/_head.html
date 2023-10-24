@@ -1,0 +1,17 @@
+<%
+const main = typeof mainIndex !== "undefined" && mainIndex
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Content Declaration<%= title ? `- ${title}` : "" %> <%= main ? "" : semver.raw %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta itemprop="ai-content-declaration:version" content="<%= semver.raw %>" />
+  <meta itemprop="ai-content-declaration:level" content="none" />
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" />
+  <link rel="stylesheet" href="/<%= semver.raw %>/main.css">
+  <script src="/<%= semver.raw %>/main.js"></script>
+  <script defer data-domain="declare-ai.org" src="https://plausible.io/js/script.js"></script>
+</head>
+<body class="ff-sans bg-gray-darkest green-lighter">

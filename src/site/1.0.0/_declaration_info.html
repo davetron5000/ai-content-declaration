@@ -1,0 +1,43 @@
+<section class="mh-auto measure bg-green-darkest br-2 pa-3 mt-5">
+  <h4 class="mv-0 f-3 fw-4">
+    Metadata for level “<%= level %>”
+    <a href="declare.html" class="db f-1 i lh-copy">
+      Learn More
+    </a>
+  </h4>
+  <dl class="pl-0 bb bc-green-darker pb-2">
+      <dt class="db ws-nowrap"><code class="ws-nowrap f-1 fw-bold">ai-content-declaration:level</code></dt>
+      <dd class="ml-0 db mb-3 mt-2"><code class="ws-nowrap f-1 dib pv-1 ph-2 bg-green-lightest bc-green-darker br-2 green-dark"><%= level %></code></dd>
+      <dt class="db ws-nowrap"><code class="ws-nowrap f-1 fw-bold">ai-content-declaration:version</code></dt>
+      <dd class="ml-0 db mb-2 mt-2"><code class="ws-nowrap f-1 dib pv-1 ph-2 bg-green-lightest bc-green-darker br-2 green-dark"><%= semver.raw %></code></dd>
+  </dl>
+  <h4 class="mt-0 mb-1 f-1 ttu lh-copy"><a class="db white" href="declare.html#structured">HTML Structure</a> <span class="ttl">for</span> <code class="ttl">&lt;head&gt;</code></h4>
+  <code class="db mh-auto measure overflow-x-scroll bg-black bc-green-dark ba green-light br-3 ph-3"><pre>
+<span class="green-lighter glow">&lt;meta itemprop="ai-content-declaration:version"
+      content="<span class="green-lightest"><%= semver.raw %></span>"&gt;
+&lt;meta itemprop="ai-content-declaration:level"
+      content="<span class="green-lightest"><%= level %></span>"&gt;
+<% if (level !== "none") { %>&lt;meta itemprop="ai-content-declaration:ai-name"
+      content="<span class="green-lightest">«name here»</span>"&gt;
+&lt;meta itemprop="ai-content-declaration:details"
+      content="<span class="green-lightest">«free-form details»</span>"&gt;</span>
+<% } %></pre></code>
+  <h4 class="mt-3 mb-1 f-1 ttu"><span class="ttl">for inline elements</span></h4>
+    <code class="db mh-auto measure overflow-x-scroll bg-black green-light br-3 ph-3 bc-green-dark ba"><pre>&lt;img src="my-image.png" &lt;-- or any element --&gt;
+     <span class="glow green-lighter">itemref="my-image-acd-level
+              my-image-acd-version
+              my-image-acd-ai-name
+              my-image-acd-details"</span>&gt;
+<span class="glow green-lighter">&lt;data id="my-image-acd-level"
+      itemprop="ai-content-declaration:version"
+      value="<span class="green-lightest"><%= semver.raw %></span>" /&gt;
+&lt;data id="my-image-acd-level"
+      itemprop="ai-content-declaration:level"
+      value="<span class="green-lightest"><%= level %></span>" /&gt;
+<% if (level !== "none")  { %>&lt;data id="my-image-acd-ai-name"
+      itemprop="ai-content-declaration:ai-name"
+      value="<span class="green-lightest">«name here»</span>" /&gt;
+&lt;data id="my-image-acd-details"
+      itemprop="ai-content-declaration:details"
+      value="<span class="green-lightest">«free-form details»</span>" /&gt;</span><% } %></pre></code>
+</section>

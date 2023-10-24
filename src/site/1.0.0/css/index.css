@@ -1,0 +1,49 @@
+@import "melange-css/melange.css";
+
+:root {
+  --mg-ff-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+}
+
+:root {
+  --mg-green-darkest: #002900; /* Deep Fir */
+  --mg-green-darker: #003d00; /* Deep Fir */
+  --mg-green-dark: #006600; /* Camarone */
+  --mg-green: #00ff00; /* Green */
+  --mg-green-light: #66ff66; /* Screamin' Green */
+  --mg-green-lighter: #b3ffb3; /* Reef */
+  --mg-green-lightest: #f5fff5; /* Sugar Cane */
+
+  --mg-gray-darkest: #141414; /* Cod Gray */
+  --mg-gray-darker: #1f1f1f; /* Mine Shaft */
+  --mg-gray-dark: #333333; /* Mine Shaft */
+  --mg-gray: #808080; /* Gray */
+  --mg-gray-light: #b3b3b3; /* Nobel */
+  --mg-gray-lighter: #d9d9d9; /* Alto */
+  --mg-gray-lightest: #fafafa; /* Alabaster */
+}
+
+a {
+  color: var(--mg-green-lightest);
+}
+
+a:not([class]) {
+  color: currentColor;
+}
+
+p {
+  line-height: 1.5;
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.glow {
+  text-shadow: rgba(230,255,230,0.61) 0px 0px 4px;
+}
+.glow-less {
+  text-shadow: rgba(230,255,230,0.51) 0px 0px 4px;
+}
