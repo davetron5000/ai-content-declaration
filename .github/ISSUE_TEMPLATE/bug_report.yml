@@ -18,6 +18,7 @@ body:
   attributes:
     label: Confirmation
     description: Please confirm the following items before submitting a new request.
+    options:
     - label: This is about a bug on the website, not a problem with the standard itself
       required: true
     - label: This bug occurs on [declare-ai.org](https://declare-ai.org), the website and/or the latest version, which I'm running locally
