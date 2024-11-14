@@ -12,7 +12,6 @@ usage_description="Execute a command inside the app's container."
 usage_args="[-s service] command"
 usage_pre="exec.pre"
 usage_on_help "${usage_description}" "${usage_args}" "${usage_pre}" "" "${@}"
-ensure_docker_compose_env
 
 SERVICE="${SERVICE_NAME:-${DEFAULT_SERVICE}}"
 while getopts "s:" opt "${@}"; do
