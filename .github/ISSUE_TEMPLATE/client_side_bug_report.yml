@@ -5,6 +5,8 @@ description: Report a bug which happens in the browser when using the website.
 title: '[Bug]: '
 labels:
 - bug
+- website
+- client-side
 body:
 - type: markdown
   attributes:
