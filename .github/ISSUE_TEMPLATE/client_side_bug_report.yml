@@ -11,7 +11,7 @@ body:
 - type: markdown
   attributes:
     value: |-
-      ## Bug Report
+      ## Bug Report (Client Side)
       Before you fill out this form, please do the following:
       - [Search for existing issues and pull requests](https://github.com/davetron5000/declare-ai.org/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Abug) to ensure this bug has not already been reported.
       - If you're running the website locally, ensure that you are on the latest version"
