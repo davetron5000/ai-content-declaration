@@ -1,0 +1,86 @@
+# This issue form was created with non-creative assistance from a Generative AI. Specifically: Inline completions by GitHub Copilot.
+# https://declare-ai.org/1.0.0/non-creative.html
+name: Bug Report (Client Side)
+description: Report a bug which happens in the browser when using the website.
+title: '[Bug]: '
+labels:
+- bug
+body:
+- type: markdown
+  attributes:
+    value: |-
+      ## Bug Report
+      Before you fill out this form, please do the following:
+      - [Search for existing issues and pull requests](https://github.com/davetron5000/declare-ai.org/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Abug) to ensure this bug has not already been reported.
+      - If you're running the website locally, ensure that you are on the latest version"
+- type: checkboxes
+  id: confirmation
+  attributes:
+    label: Confirmation
+    description: Please confirm the following items before submitting a new request.
+    - label: This is about a bug on the website, not a problem with the standard itself
+      required: true
+    - label: This bug occurs on [declare-ai.org](https://declare-ai.org), the website and/or the latest version, which I'm running locally
+      required: true
+    - label: I have searched for existing issues and pull requests to ensure this bug has not already been reported.
+      required: true
+- type: input
+  id: summary
+  attributes:
+    label: Summary
+    description: A short description of the bug. More detailed information can be provided in the following sections.
+    required: true
+- type: input
+  id: page
+  attributes:
+    label: Page
+    description: The URL of the page where the bug occurred
+    required: true
+- type: dropdown
+  id: browser
+  attributes:
+    label: Browser
+    description: The browser where the bug occurred
+    multiple: true
+    options:
+      - Google Chrome
+      - Mozilla Firefox
+      - Apple Safari
+      - Microsoft Edge
+      - Other
+    required: true
+- type: textarea
+  id: description
+  attributes:
+    label: Description
+    description: A detailed description of the bug
+    required: true
+- type: textarea
+  id: steps
+  attributes:
+    label: Steps to Reproduce
+    description: Please provide detailed steps to reproduce the issue
+    required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected Behavior
+    description: Please describe what you expected to happen after following the steps above (if anything was supposed to happen)
+    required: false
+- type: textarea
+  id: actual
+  attributes:
+    label: Actual Behavior
+    description: Please describe what actually happened after following the steps above
+    required: true
+- type: textarea
+  id: screenshots
+  attributes:
+    label: Screenshots
+    description: Add screenshots if they can help explain the issue
+- type: textarea
+  id: log
+  attributes:
+    label: Console Log
+    description: Any relevant console log output
+    render: console
