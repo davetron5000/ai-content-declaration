@@ -10,8 +10,6 @@ require_command "docker"
 
 usage_on_help "Builds the Docker image based on the Dockerfile" "" "build.pre" "build.post" "${@}"
 
-ensure_docker_compose_env
-
 exec_hook_if_exists "build.pre" Dockerfile.dx "${IMAGE}"
 
 docker build \

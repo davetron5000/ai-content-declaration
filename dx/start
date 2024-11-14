@@ -8,7 +8,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" > /dev/null 2>&1 && pwd )
 require_command "docker"
 
 usage_on_help "Starts all services, including a container in which to run your app" "" "" "" "${@}"
-ensure_docker_compose_env
 
 log "🚀" "Starting docker-compose.dx.yml"
 
