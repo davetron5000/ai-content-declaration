@@ -48,7 +48,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: A detailed description of the server-side bug
+      description: A detailed description of the bug
     validations:
       required: true
 
