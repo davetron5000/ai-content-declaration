@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Open A Discussion
+    url: https://github.com/davetron5000/declare-ai.org/discussions/new
+    about: Submit bigger, broader or more open-ended ideas or other feedback as a discussion.
