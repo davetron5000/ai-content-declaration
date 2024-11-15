@@ -82,8 +82,7 @@ body:
   attributes:
     label: Expected Behavior
     description: Please describe what you expected to happen after following the steps above (if anything was supposed to happen)
-  validations:
-    required: false
+
 
 - type: textarea
   id: actual

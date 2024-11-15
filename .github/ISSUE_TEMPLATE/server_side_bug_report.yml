@@ -43,8 +43,6 @@ body:
     attributes:
       label: Page
       description: The URL of the page where the bug occurred
-    validations:
-      required: false
 
   - type: textarea
     id: description
