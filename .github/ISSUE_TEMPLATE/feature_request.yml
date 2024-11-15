@@ -62,7 +62,7 @@ body:
   id: mockups
   attributes:
     label: Mockups
-    description: If you have any mockups or screenshots, please attach them here
+    description: If you have any mockups or screenshots illustrating the feature, please attach them here
 
 
 - type: textarea
