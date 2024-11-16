@@ -97,8 +97,14 @@ fs.mkdirSync(siteDir)
 
 const versions = []
 Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
-  const sitePath = `${siteDir}/${dir}`
   versions.push(semver)
+})
+
+const sorted = semver.rsort(versions)
+const latest = sorted[0]
+
+Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
+  const sitePath = `${siteDir}/${dir}`
   fs.mkdirSync(sitePath)
   fs.readdirSync(fullPath).forEach((file) => {
     if (fs.statSync(fullPath + "/" + file).isDirectory()) {
@@ -136,6 +142,7 @@ Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
           source,
           {
             semver: semver,
+            latest: latest,
           },
           (err, str) => {
             if (err)  {
@@ -154,8 +161,6 @@ Object.entries(dirs).forEach( ( [dir, { semver, fullPath }] ) => {
     }
   })
 })
-const sorted = semver.rsort(versions)
-const latest = sorted[0]
 
 ejs.renderFile(
   dirs[latest.raw].fullPath + "/index.html",
@@ -163,6 +168,7 @@ ejs.renderFile(
     semver: latest,
     versions: versions,
     mainIndex: true,
+    latest: latest,
   },
   (err, str) => {
     if (err)  {

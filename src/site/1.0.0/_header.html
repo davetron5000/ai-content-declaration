@@ -8,4 +8,12 @@ const sizeInvert = typeof size_invert !== "undefined" && size_invert
   <% if (main) { %>
   <h3 class="f-2 lh-title fw-3">Latest Version <strong class="fw-5"><%= semver %></strong></h3>
   <% } %>
+  <% if (semver != latest) { %>
+  <aside class="measure-wide mh-auto f-1 ba br-2 pa-2 tl bg-yellow-darkest yellow-lighter flex items-center mt-2">
+    <span class="f-4 ph-2" role="img" aria-label="A stylistic letter 'i' to indicate the text next to it contains important information">&#8505;</span>
+    <p class="lh-copy ph-2 no-center">
+      The latest version is <a href="/index.html"><%= latest %></a>, and you are encouraged to upgrade.
+    </p>
+  </aside>
+  <% } %>
 </header>
