@@ -19,41 +19,41 @@
         <%- include( "_text_declaration.html", {
           anchor: "written-none",
           title: "None",
-          sample_text: "[This «type of work»|«title of work»] was created without any contribution from a Generative AI.",
+          sample_text: "[This «type of work»|«title of work»] was created without any contribution from a generative AI.",
           link: `https://declare-ai.org/${ semver.raw }/none.html`,
           examples: [
-            "This blog post was created without any contribution from a Generative AI.",
-            "<span class=\"fs-normal\">War and Peace</span> was created without any contribution from a Generative AI",
+            "This blog post was created without any contribution from a generative AI.",
+            "<span class=\"fs-normal\">War and Peace</span> was created without any contribution from a generative AI",
           ],
         } ) %>
         <%- include( "_text_declaration.html", {
           anchor: "written-non-creative",
           title: "Non-Creative",
-          sample_text: "[This «type of work»|«title of work»] was created with non-creative assistance from [a Generative AI | «name of AI system»].  [optional details of the contribution]",
+          sample_text: "[This «type of work»|«title of work»] was created with non-creative assistance from [a generative AI | «name of AI system»].  [optional details of the contribution]",
           link: `https://declare-ai.org/${ semver.raw }/non-creative.html`,
           examples: [
-            "This blog post was created with non-creative assistance from a Generative AI.",
-            "This image was created with non-creative assistance from a Generative AI. It provided content-aware fill in some areas.",
+            "This blog post was created with non-creative assistance from a generative AI.",
+            "This image was created with non-creative assistance from a generative AI. It provided content-aware fill in some areas.",
           ],
         } ) %>
         <%- include( "_text_declaration.html", {
           anchor: "written-creative",
           title: "Creative",
-          sample_text: "[This «type of work»|«title of work»] includes creative contributions from [a Generative AI | «name of AI system»].  [optional details of the contribution]",
+          sample_text: "[This «type of work»|«title of work»] includes creative contributions from [a generative AI | «name of AI system»].  [optional details of the contribution]",
           link: `https://declare-ai.org/${ semver.raw }/creative.html`,
           examples: [
             "This blog post was created with creative assistance from a Chat GPT. It provided the initial text for the post, which was then edited to remove mistakes and add additional info.",
-            "The song <i>Here and Now and There</i> was created with creative assistance from a Generative AI. It provided the drum tracks and the chord changes.",
+            "The song <i>Here and Now and There</i> was created with creative assistance from a generative AI. It provided the drum tracks and the chord changes.",
           ],
         } ) %>
         <%- include( "_text_declaration.html", {
           anchor: "written-total",
           title: "Total",
-          sample_text: "[This «type of work»|«title of work»] was created by [a Generative AI | «name of AI system»]. [optional prompt or instructions used]",
+          sample_text: "[This «type of work»|«title of work»] was created by [a generative AI | «name of AI system»]. [optional prompt or instructions used]",
           link: `https://declare-ai.org/${ semver.raw }/total.html`,
           examples: [
           "This image was created by OpenAI's DALL-E based on the prompt \"endless programmers programming at endless computers\".",
-          "This email was created entirely by a Generative AI.",
+          "This email was created entirely by a generative AI.",
           ],
         } ) %>
     </section>
@@ -62,7 +62,7 @@
       <h3 class="f-4 tc lh-title measure mh-auto ph-3">Structured Declaration</h3>
       <div class="ph-3">
         <p>
-          Making your Declaration in a structured way can be additionally helpful.  This can allow other technologies to understand your declaration, which can lead to additional capabilities.  For example, a researcher may want to highlight areas of a work where a Generative AI contributed creatively so they can quickly understand what they are reading.
+          Making your Declaration in a structured way can be additionally helpful.  This can allow other technologies to understand your declaration, which can lead to additional capabilities.  For example, a researcher may want to highlight areas of a work where a generative AI contributed creatively so they can quickly understand what they are reading.
         </p>
         <p>
           Because of the myriad formats for media that exist, not all can include a structured declaration.  This guide will include those that do.
@@ -103,17 +103,17 @@
               </td>
               <td class="ph-2 pv-1 br bb bc-green-dark">Yes</td>
               <td class="ph-2 pv-1 bb bc-green-dark f-1">
-                <p>Declares the level of Generative AI assistance</p>
+                <p>Declares the level of generative AI assistance</p>
               </td>
             </tr>
             <tr>
               <td class="ph-2 pv-1 br bb ws-nowrap bc-green-dark"><code>ai-content-declaration<span class="fw-bold">:ai-name</span></code></td>
               <td class="ph-2 pv-1 br bb bc-green-dark">
-                <p>Name of the <span class="dib">Generative AI</span></p>
+                <p>Name of the <span class="dib">generative AI</span></p>
               </td>
               <td class="ph-2 pv-1 br bb bc-green-dark">No</td>
               <td class="ph-2 pv-1 bb bc-green-dark f-1">
-                <p>Declares which Generative AI system was used.</p>
+                <p>Declares which generative AI system was used.</p>
               </td>
             </tr>
             <tr>
@@ -140,7 +140,7 @@
 
           <dt class="mt-4"><code class="ws-nowrap f-1">ai-content-declaration<span class="fw-bold">:level</span></code></dt>
           <dd class="ma-0 pa-0 pl-3">
-          <p>Declares the level of Generative AI assistance <strong>Required</strong></p>
+          <p>Declares the level of generative AI assistance <strong>Required</strong></p>
             <dl>
               <dt class="fw-5">Values:</dt>
               <dd>
@@ -156,11 +156,11 @@
 
           <dt class="mt-4"><code class="ws-nowrap f-1">ai-content-declaration<span class="fw-bold">:ai-name</span></code></dt>
           <dd class="ma-0 pa-0 pl-3">
-          <p>Declares which Generative AI system was used. <strong>Optional</strong></p>
+          <p>Declares which generative AI system was used. <strong>Optional</strong></p>
             <dl>
               <dt class="fw-5">Value:</dt>
               <dd>
-              <p class="i mt-0">Name of the <span class="dib">Generative AI</span></p>
+              <p class="i mt-0">Name of the <span class="dib">generative AI</span></p>
               </dd>
             </dl>
           </dd>
@@ -195,7 +195,7 @@
       <section class="pa-3">
       <h5 class="measure mh-auto tc f-2">HTML</h5>
       <p>
-        HTML is the most ubiquitous media type, and it's likely that your work is HTML, or is being presented as HTML.  In addition to a human readable written statement, your HTML can make use of special tags and attributes to indicate which parts of a page have which levels of Generative AI content.
+        HTML is the most ubiquitous media type, and it's likely that your work is HTML, or is being presented as HTML.  In addition to a human readable written statement, your HTML can make use of special tags and attributes to indicate which parts of a page have which levels of generative AI content.
       </p>
       <p>
         To make declarations in HTML, you can use a combination of <code>meta</code> and <code>data</code> tags along with <code>itemprop</code>, <code>content></code>, <code>value</code>, and <code>itemref</code> attributes.
