@@ -10,4 +10,12 @@ const main = typeof mainIndex !== "undefined" && mainIndex
     This site's contents are in <em>alpha</em> meaning they are subject to change.  I would appreciate <a href="https://github.com/davetron5000/declare-ai.org/issues" class="green-lightest">any feedback or comments</a>.
     </p>
   </aside>
+  <% if (semver != latest) { %>
+  <aside class="measure-wide mh-auto f-1 ba br-2 pa-2 tl bg-yellow-darkest yellow-lighter flex items-center mt-2">
+    <span class="f-4 ph-2" role="img" aria-label="A stylistic letter 'i' to indicate the text next to it contains important information">&#8505;</span>
+    <p class="lh-copy ph-2 no-center">
+      The latest version is <a href="/index.html"><%= latest %></a>, and you are encouraged to upgrade.
+    </p>
+  </aside>
+  <% } %>
 </header>

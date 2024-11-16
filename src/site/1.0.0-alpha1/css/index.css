@@ -36,6 +36,10 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+p.no-center {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 strong {
   font-weight: 500;
